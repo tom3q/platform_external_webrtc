@@ -4,6 +4,10 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+ifneq ($(ARCH_ARM_HAVE_ARMV7A),true)
+	LOCAL_ARM_MODE := arm
+endif
+
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
 LOCAL_MODULE := libwebrtc_ns
 LOCAL_MODULE_TAGS := optional
